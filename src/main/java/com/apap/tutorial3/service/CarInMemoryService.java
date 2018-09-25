@@ -40,4 +40,14 @@ public class CarInMemoryService implements CarService {
 		}
 		return receivedCar;
 	}
+	
+	@Override
+	public CarModel removeCar(String id) {
+		CarModel removedCar = this.getCarDetail(id);
+		if (removedCar != null) {
+			archiveCar.remove(removedCar);
+		}
+		
+		return removedCar;
+	}
 }

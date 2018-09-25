@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>View Detail</title>
+	</head>
+	<body>
+	<span th:if="${checkID} == null">
+		<h3>Mohon maaf anda tidak memasukkan argumen ID</h3>
+	</span>
+	<span th:unless="${checkID} == null">
+		<span th:if="${checkDelete} == null">
+			<h3>Mohon maaf mobil dengan ID yang anda ingin hapus tidak ditemukan</h3>
+			<h3 th:text="'ID: '+ ${removedCar.id}"></h3>
+		</span>
+		<span th:unless="${checkDelete} == null">
+			<h3>Mobil dengan ID yang anda masukkan berhasil di hapus!!!</h3>
+			<span th:if="${listCarSize} != 0">
+				<h3>Saat ini mobil yang ada di dalam sistem adalah:</h3>
+				<div th:each="car : ${listCar}">
+					<h3 th:text="'ID: '+ ${car.id}"></h3>
+					<h3 th:text="'Brand: '+ ${car.brand}"></h3>
+					<h3 th:text="'Type: '+ ${car.type}"></h3>
+					<h3 th:text="'Price: '+ ${car.price}"></h3>
+					<h3 th:text="'Amount: '+ ${car.amount}"></h3>
+				</div>
+			</span>
+			<span th:unless="${listCarSize} != 0">
+				<h3>Saat ini tidak ada mobil yang tersimpan dalam sistem</h3>
+			</span>
+		</span>
+	</span>
+	</body>
+</html>
