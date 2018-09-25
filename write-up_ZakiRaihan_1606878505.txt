@@ -1,0 +1,19 @@
+Nama: Zaki Raihan
+NPM: 1606878505
+Kelas: APAP - A
+
+Pertanyaan 1: Tidak ada error yang muncul
+
+Pertanyaan 2: akan ada error karena parameter amount tidak dimasukkan namun parameter amount merupakan parameter yang wajib ada.
+			(tertuls pada CarController untuk parameter amount memiliki nilai required true)
+			
+Pertanyaan 3: Car tersebut muncul di layar dengan urutan atribut sesuai yang dituliskan pada view-car.html 
+			(mulai dari id, brand, type, price, amount)
+
+Pertanyaan 4: Terjadi error, hal tersebut dikarenakan data dari mobil masih di simpan dalam bentuk statik, belum disimpan 
+			di database sungguhan. sehingga pada saat program dimatikan maka data mobil dengan id 2 akan terhapus dari program 
+			dan saat menjalankan aplikasi kembali dan mencoba view-car, data mobil tidak ditemukan.
+			
+Pertanyaan 5: Ya, data car yang baru dimasukkan 
+
+Pertanyaan 6: Ya, data dengan id 3 (yang sebelumnya dimasukkan) dan juga data baru muncul di layar
