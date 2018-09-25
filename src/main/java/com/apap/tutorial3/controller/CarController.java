@@ -33,8 +33,9 @@ public class CarController {
 	@RequestMapping("/car/view")
 	public String view(@RequestParam("id") String id, Model model) {
 		CarModel archive = mobilService.getCarDetail(id);
-		
+		String checkID = "tidak kosong";
 		model.addAttribute("car", archive);
+		model.addAttribute("checkID", checkID);
 		return "view-car";
 	}
 	
@@ -49,12 +50,33 @@ public class CarController {
 	@RequestMapping(value = {"/car/view/", "/car/view/{id}"})
 	public String viewBaru (@PathVariable Optional<String> id, Model model) {
 		CarModel archive = null;
+		String checkID = null;
 		if (id.isPresent()) {
 			archive = mobilService.getCarDetail(id.get());
+			checkID = "tidak kosong :)";
 		}
 		
+		model.addAttribute("checkID", checkID);
 		model.addAttribute("car", archive);
 		return "view-car";
 	}
+	
+	@RequestMapping(value = {"/car/update/", "/car/update/{id}/amount/{jumlah}"})
+	public String update (@PathVariable Optional<String> id, @PathVariable Optional<Integer> jumlah, Model model) {
+		CarModel archive = null;
+		String checkID = null;
+		if (id.isPresent()) {
+			archive = mobilService.getCarDetail(id.get());
+			checkID = "tidak kosong :)";
+			if (archive != null) {
+				archive.setAmount(jumlah.get());
+			}
+		}
+		
+		model.addAttribute("checkID", checkID);
+		model.addAttribute("car", archive);
+		return "update";
+	}
+	
 	
 }

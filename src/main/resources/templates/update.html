@@ -12,11 +12,12 @@
 			<h3>Mohon maaf mobil dengan ID yang anda cari tidak ditemukan</h3>
 		</span>
 		<span th:unless="${car} == null">
-			<h3 th:text="${car.id}"></h3>
-			<h3 th:text="${car.brand}"></h3>
-			<h3 th:text="${car.type}"></h3>
-			<h3 th:text="${car.price}"></h3>
-			<h3 th:text="${car.amount}"></h3>
+			<h3>Data Amount yang baru berhasil disimpan!!! Kondisi saat ini:</h3>
+			<h3 th:text="'ID: '+ ${car.id}"></h3>
+			<h3 th:text="'Brand: '+ ${car.brand}"></h3>
+			<h3 th:text="'Type: '+ ${car.type}"></h3>
+			<h3 th:text="'Price: '+ ${car.price}"></h3>
+			<h3 th:text="'Amount: '+ ${car.amount}"></h3>
 		</span>
 	</span>
 	</body>
