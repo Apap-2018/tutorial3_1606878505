@@ -4,10 +4,15 @@
 		<title>View Detail</title>
 	</head>
 	<body>
+	<span th:if="${car} == null">
+		<h3>Error Bro</h3>
+	</span>
+	<span th:unless="${car} == null">
 		<h3 th:text="${car.id}"></h3>
 		<h3 th:text="${car.brand}"></h3>
 		<h3 th:text="${car.type}"></h3>
 		<h3 th:text="${car.price}"></h3>
 		<h3 th:text="${car.amount}"></h3>
+	</span>
 	</body>
 </html>
